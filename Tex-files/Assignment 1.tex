@@ -1,0 +1,104 @@
+\documentclass{paper}
+
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{bbm}
+
+
+
+% something NOT relevant to the usage of the package.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{18pt}
+
+\usepackage[latin1]{inputenc} 
+\usepackage[T1]{fontenc} 
+
+\usepackage{listings} 
+\lstset{% 
+   language=Matlab, 
+   basicstyle=\small\ttfamily, 
+} 
+
+\title{Assignment 1}
+
+\author{Simon Jenni\\09-116-005}
+% //////////////////////////////////////////////////
+
+\begin{document}
+
+
+
+\maketitle
+
+
+% Add figures:
+%\begin{figure}[t]
+%%\begin{center}
+%\quad\quad   \includegraphics[width=1\linewidth]{ass2}
+%%\end{center}
+%
+%\label{fig:performance}
+%\end{figure}
+
+\section*{P1}
+
+\begin{enumerate}
+\item  
+Let $A_{SQ}$ be the area of the unit square and $A_{QC}$ be the area of the quarter-circle. The probability of a uniformly chosen point in $A_{SQ}$ lying in $A_{QC}$ is then given by:
+\begin{equation}
+P(x\in A_{QC}) = \frac{A_{QC}}{A_{SQ}} = \frac{\pi}{4}
+\end{equation}
+
+\item 
+See attached Matlab files (without for-loops)
+\item
+See attached Matlab files (without for-loops)
+
+\item
+Running the program gives the following solutions:
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+N        & $\pi_{min}$ & $\pi_{max}$ & $\pi_{mean}$ & $\Delta \pi$ \\ \hline
+100      & 2.60000     & 3.48000     & 3.14640      & 0.17077      \\ \hline
+1000     & 3.03600     & 3.24000     & 3.14304      & 0.04473      \\ \hline
+10000    & 3.10280     & 3.18200     & 3.14028      & 0.01555      \\ \hline
+100000   & 3.13092     & 3.15756     & 3.14226      & 0.00500      \\ \hline
+1000000  & 3.13752     & 3.14668     & 3.14169      & 0.00167      \\ \hline
+10000000 & 3.14047     & 3.14283     & 3.14164      & 0.00052      \\ \hline
+\end{tabular}
+\end{table}
+\end{enumerate}
+
+
+\section*{P2}
+\begin{enumerate}
+\item 
+Let $X_i\in{\{"yes", "no"\}}$ for $i=1,...,N$.
+The rule could be as follows:
+\begin{equation}
+\begin{cases}
+    "yes"& \text{if } \sum_{i=1}^{N} \mathbbm{1}\{X_i="yes")\} \geq N/2 \\
+    "no",              & \text{otherwise}
+\end{cases}
+\end{equation}
+That is, we would choose $"yes"$ if we encounter $"yes"$ at least five times in all the $X_i$. In the particular case we would therefore choose "yes" as it occurs six times.
+
+\item
+Yes, the rule would have to be modified as the probability of error in one of the two cases would be greater than the other one. Weighting the outcomes by the inverse of the error probabilities sounds like a good idea.
+
+
+
+\end{enumerate}
+
+ \end{document}
+ 
+ 
