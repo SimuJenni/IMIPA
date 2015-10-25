@@ -2,6 +2,14 @@ function [ x ] = simplex( d, A, b )
 %Solves the LP argmin<d,x> s.t. Ax<=b, x_i>=0 using the simplex-method.
 % Returns nil if the problem is infeasible
 
+% Check inputs (want column-vectors...)
+if(isrow(b))
+   b = b'; 
+end
+if(isrow(d))
+    d = d';
+end
+
 [m,n]=size(A);
 % Initialize x
 x = zeros(m+n,1);
