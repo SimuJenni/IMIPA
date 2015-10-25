@@ -1,0 +1,72 @@
+\documentclass{paper}
+
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{bbm}
+
+
+
+% something NOT relevant to the usage of the package.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{18pt}
+
+\usepackage[latin1]{inputenc} 
+\usepackage[T1]{fontenc} 
+
+\usepackage{listings} 
+\lstset{% 
+   language=Matlab, 
+   basicstyle=\small\ttfamily, 
+} 
+
+\title{Assignment 2}
+
+\author{Simon Jenni\\09-116-005}
+% //////////////////////////////////////////////////
+
+\begin{document}
+
+
+
+\maketitle
+
+
+% Add figures:
+%\begin{figure}[t]
+%%\begin{center}
+%\quad\quad   \includegraphics[width=1\linewidth]{ass2}
+%%\end{center}
+%
+%\label{fig:performance}
+%\end{figure}
+
+\section*{P1 and P2}
+Please see attached MATLAB files...
+
+\section*{P3}
+We can write each number $x \in{(0,1)}$ as a possibly infinite series 
+\begin{equation}
+x = \sum_{i=1}^{\infty}b_i*2^{-i} 
+\end{equation}
+where $b_i\in{\{0, 1\}}$ and $b = (b_1, b_2, ...)$ is a binary representation of $x$. 
+
+We can then use the random number generator to create the $b_i$ via the mapping 
+\begin{equation}
+b_i = 
+\begin{cases}
+    1& \text{if result is } a \\
+    0              & \text{otherwise}
+\end{cases}
+\end{equation}
+
+This will result in uniformly distributed random numbers in $(0,1)$. However, note that infinitely many samples of the RNG would have to be produced in order to generate the infinitely many $b_i$'s.
+
+ \end{document}
+ 
+ 
