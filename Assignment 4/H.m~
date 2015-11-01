@@ -1,0 +1,12 @@
+function [ h ] = H( AM, D )
+%H calculates the length of a cycle defined by adjacency matrix AM 
+%with the distance matrix D.
+
+n = size(AM,1);
+h = 0;
+for idx=1:n
+    h = h+sum(D(idx,fAM(idx,idx:end)==1));
+end
+
+end
+

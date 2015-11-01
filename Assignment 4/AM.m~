@@ -1,0 +1,21 @@
+function [ am ] = AM( sigma )
+%AM computes the adjacency matrix corresponding to the permutation sigma
+
+% Init adjacency matrix
+n = max(size(sigma));
+am = zeros(n);
+
+% Retrieve indices of predecessors and successors
+circshift(sigma,[0 1])
+succes = arrayfun(@(idx)sigma(mod(find(sigma==idx),n)+1),1:n);
+preds = arrayfun(@(idx)sigma(find(sigma==idx)-1),1:n);
+
+
+% Set entries in AM
+for i=1:n
+    am(i,indices(1,i)) = 1;
+    am(i,indices(2,i)) = 1;
+end
+
+end
+
