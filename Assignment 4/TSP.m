@@ -39,3 +39,13 @@ g = G(im,D);
 
 % Print out the results to make sure they're all equal
 fprintf('L = %f\nH = %f\nG = %f\nLower-Bound = %f\nUpper-Bound = %f\n', l, h, g, lb, ub);
+
+% Bonus
+% Retrieve path from adjacency matrix
+path = pathFromAdjacencyMatrix(am);
+
+% Test if path correct
+idx = find(sigma==1);
+truePathForward = [sigma(idx:end) sigma(1:idx-1)];
+truePathBackward = [sigma(idx:-1:1) sigma(end:-1:idx+1)];
+correct = sum(truePathForward-path)==0 || sum(truePathBackward-path)==0;
