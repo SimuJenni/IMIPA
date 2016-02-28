@@ -1,7 +1,7 @@
 % clear all;
 
 % Choose p = dim(theta)
-p = 20; % should be even
+p = 10; % should be even
 
 % Define function to be minimized.
 B = diag(ones(p,1)*0.5)+0.5;
